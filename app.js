@@ -15,7 +15,6 @@ app.use(express.static("public"))
 
 const mongoDB = `mongodb+srv://${db_user}:${db_password}@cluster0.soaw7.mongodb.net/wikiDB`
 
-// const mongoDB = `mongodb+srv://admin-wayne:ymw123@cluster0.soaw7.mongodb.net/wikiDB`
 
 // const mongoDB = 'mongodb://localhost:27017/wikiDB'
 
