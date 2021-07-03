@@ -3,13 +3,21 @@ const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const ejs = require("ejs")
 const app = express()
+const dotenv = require("dotenv").config();
+
+const db_user = process.env.DB_USERNAME
+const db_password = process.env.DB_PASSWORD
 
 app.set('view engine', 'ejs')
-
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static("public"))
 
-const mongoDB = 'mongodb://localhost:27017/wikiDB'
+
+const mongoDB = `mongodb+srv://${db_user}:${db_password}@cluster0.soaw7.mongodb.net/wikiDB`
+
+// const mongoDB = `mongodb+srv://admin-wayne:ymw123@cluster0.soaw7.mongodb.net/wikiDB`
+
+// const mongoDB = 'mongodb://localhost:27017/wikiDB'
 
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
 
